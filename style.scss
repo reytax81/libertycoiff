@@ -1,6 +1,13 @@
-html{
-    & body{
+$bg-color: #6edf39;
+
+
+
+
+
+
+body{
         width: 100%;
         height: 100%;
+        font-family: 'Playfair Display', serif;
+        background: $bg-color;
     }
-}

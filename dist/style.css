@@ -1,4 +1,6 @@
-html body {
+body {
   width: 100%;
   height: 100%;
+  font-family: "Playfair Display", serif;
+  background: #6edf39;
 }
