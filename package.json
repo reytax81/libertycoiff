@@ -1,0 +1,22 @@
+{
+    "name": "libertycoiff",
+    "version": "1.0.0",
+    "description": "projet personnel",
+    "main": "index.js",
+    "scripts": {
+      "sass": "sass --watch ./style.scss:./dist/style.css",
+      "prefix": "postcss ./dist/style.css --use autoprefixer -d ./css/prefixed/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/reytax81/libertycoiff.git"
+    },
+    "browserslist": "last 4 version", 
+    "author": "yann boucaret",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/reytax81/libertycoiff.git/issues"
+    },
+    "homepage": "https://github.com/reytax81/libertycoiff.git#readme"
+  }
+  
