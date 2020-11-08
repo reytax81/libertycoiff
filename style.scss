@@ -4,7 +4,7 @@ $color-secondary: #2b3d6b;
 $color-tertiaire: #2e3e6f;
 
 @mixin textShadow {
-    text-shadow: 3px 3px 4px #fff;
+    text-shadow: 8px 8px 10px #fff;
 }
 @mixin textfootershadow {
     text-shadow: 3px 3px 4px darken(#fff, 15%);
@@ -283,9 +283,49 @@ iframe{
 .twitt{
     color: blue;
 }
+.facB{
+    color: blue;
+}
 .follow{
     font-size: 0.9em;
     padding-left: 20px;
+}
+
+@media all and (min-width: 320px) and (max-width: 375px){
+    
+    body{
+        width: 100%;
+    }
+    .title{
+        width: 100%;
+        & h1{
+            font-size: 3.6em;
+            text-shadow: 2px 2px 0 white;
+        }
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        & li{
+            font-size: 1.1em;
+        }
+    }
+   iframe{
+       display: none;
+   }
+   a{
+       & li{
+           font-size: 1.2em;
+       }
+   }
+   .container{
+       & a{
+           width: 70%;
+           margin-left: 15%;
+       }
+   }
 }
 
       
