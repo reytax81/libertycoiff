@@ -170,7 +170,7 @@ body{
         font-size: 6em;
         color: $color-primary;
         font-family: 'Pacifico', cursive;
-        text-shadow: 10px 10px 8px $color-secondary;
+        text-shadow: 3px 3px 0 #FFF;
         opacity: 0;
         animation: titrespin 3000ms 3s linear 1 forwards;
         &::after{
