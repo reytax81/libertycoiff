@@ -2,6 +2,7 @@ $bg-color: #6edf39;
 $color-primary: #524a95;
 $color-secondary: #2b3d6b;
 $color-tertiaire: #2e3e6f;
+$shake-intensity: 2%;
 
 @mixin textShadow {
     text-shadow: 8px 8px 10px #fff;
@@ -207,27 +208,14 @@ body{
     }
 }
 @keyframes menubar{
-    0%{
-        transform: scale(0.2);
+    25%{
+        transform: translateX($shake-intensity);
     }
-    50%{
-        transform: scale(0.5);
-    }
-    100%{
-        transform: scale(1);
+    75%{
+        transform: translateX($shake-intensity);
     }
 }
-@keyframes menuicon{
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(0.5);
-    }
-    100%{
-        transform: scale(0);
-    }
-}
+
 .menubar{
     display: flex;
     flex-direction: row;
@@ -236,7 +224,7 @@ body{
         &:hover{
             text-shadow: 4px 4px 8px gray;
             @include colorsbkg;
-            animation: menubar 1000ms 500ms forwards linear;
+            animation: menubar 150ms ease-in-out 4;
         }
         width: 200px;
         text-align: center;
@@ -256,14 +244,9 @@ body{
     justify-content: space-around;
     transform: scale(1);
     & li{
-        cursor: pointer;
        list-style: none;
        color: $color-primary;
        font-size: 3em;
-       &:hover{
-        text-shadow: 4px 4px 8px gray;
-        animation: menuicon 1000ms 500ms forwards linear;
-    }
     }
 }
 a {
@@ -340,6 +323,22 @@ iframe{
             text-shadow: 2px 2px 0 white;
         }
     }
+
+    .menubar{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(50px, auto);
+        margin-right: 40px;
+        padding-top: 20px;
+        & li{
+            font-size: 1.2em;
+            width: 150px;
+        }
+    }
+    .menuicon{
+        display: none;
+    }
     footer{
         display: flex;
         flex-direction: column;
@@ -366,10 +365,21 @@ iframe{
    }
 }
 @media screen and (min-width: 700px) and (max-width:820px) and (orientation:landscape){
+    body{
+        width: 100%;
+    }
+    
     iframe{
         display: none;
     }
+    .menubar{
+        & li{
+            font-size: 1.2em;
+            width: 120px;
+        }
+    }
     footer{
+        width: 100%;
         & li{
             font-size: 1.2em;
         }

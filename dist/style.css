@@ -190,25 +190,11 @@ body {
   }
 }
 @keyframes menubar {
-  0% {
-    transform: scale(0.2);
+  25% {
+    transform: translateX(2%);
   }
-  50% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes menuicon {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(0);
+  75% {
+    transform: translateX(2%);
   }
 }
 .menubar {
@@ -233,7 +219,7 @@ body {
   background-color: #8a83c2;
   color: #FFF;
   box-shadow: 6px 6px 8px #524a95;
-  animation: menubar 1000ms 500ms forwards linear;
+  animation: menubar 150ms ease-in-out 4;
 }
 
 .menuicon {
@@ -243,14 +229,9 @@ body {
   transform: scale(1);
 }
 .menuicon li {
-  cursor: pointer;
   list-style: none;
   color: #524a95;
   font-size: 3em;
-}
-.menuicon li:hover {
-  text-shadow: 4px 4px 8px gray;
-  animation: menuicon 1000ms 500ms forwards linear;
 }
 
 a {
@@ -336,6 +317,23 @@ iframe {
     text-shadow: 2px 2px 0 white;
   }
 
+  .menubar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    margin-right: 40px;
+    padding-top: 20px;
+  }
+  .menubar li {
+    font-size: 1.2em;
+    width: 150px;
+  }
+
+  .menuicon {
+    display: none;
+  }
+
   footer {
     display: flex;
     flex-direction: column;
@@ -361,10 +359,22 @@ iframe {
   }
 }
 @media screen and (min-width: 700px) and (max-width: 820px) and (orientation: landscape) {
+  body {
+    width: 100%;
+  }
+
   iframe {
     display: none;
   }
 
+  .menubar li {
+    font-size: 1.2em;
+    width: 120px;
+  }
+
+  footer {
+    width: 100%;
+  }
   footer li {
     font-size: 1.2em;
   }
